@@ -1,0 +1,22 @@
+{
+  "name": "nonprofit-model-failover",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "start": "node dist/nonprofit_service.js",
+    "configure:routing": "tsx src/configure_routing.ts",
+    "test": "npm run build && node --test dist/content_policy.test.js"
+  },
+  "dependencies": {
+    "openai": "^6.0.0",
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0"
+  }
+}
